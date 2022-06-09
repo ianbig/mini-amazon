@@ -1,0 +1,43 @@
+const async = require('hbs/lib/async');
+const { password } = require('pg/lib/defaults');
+
+const Pool = require('pg').Pool;
+const pool = new Pool({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'Mini_Amazon',
+  password: 'postgres',
+  port: 5432,
+});
+
+
+exports.getInprocessRequest = async () => {
+    try {
+        var results = await pool.query('SELECT seq_number, content from "REQUEST" where request_status = $1', ["processing"]);
+        return results.rows;
+    } catch (error) {
+        console.log("error when getting in-process request:", error);
+        return "error when getting in-process request";
+    }
+}
+
+
+exports.updateRequestStatus = async (seqNum, status) => {
+    try {
+        await pool.query('UPDATE "REQUEST" SET request_status = $1 WHERE seq_number = $2', [status, seqNum]);
+    } catch (error) {
+        console.log("error when updating request status:", error);
+        return "error when updating request status";        
+    }
+o}
+
+
+exports.storeRequest = async (request) => {
+    try {
+        var seq_number = await pool.query('INSERT INTO "REQUEST" (content) VALUES ($1) RETURNING seq_number', [request]);
+        return seq_number.rows[0].seq_number;
+    } catch (error) {
+        console.log("error when storing request:", error);
+        return "error when storing request";        
+    }
+}

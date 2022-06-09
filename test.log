@@ -1,0 +1,52 @@
+
+> mini-amazon@0.0.0 start
+> node ./bin/www
+
+socket: new connection to vcm-25468.vm.duke.edu: 23456
+socket: encoded message send to vcm-25468.vm.duke.edu: 23456 sending {"isAmazon":true,"initwh":[{"id":0,"x":1000,"y":800}]}
+schduler: JSON({"packageid":1,"AProduct":[{"id":1,"description":"book","count":10}],"whid":0,"ProductDestinationAddress_x":1000,"ProductDestinationAddress_y":800,"items":"Ian","UPSAccountid":1})
+schduler:{"packageid":1,"AProduct":[{"id":1,"description":"book","count":10}],"whid":0,"ProductDestinationAddress_x":1000,"ProductDestinationAddress_y":800,"items":"Ian","UPSAccountid":1})
+askTruck: {"packageid":1,"AProduct":[{"id":1,"description":"book","count":10}],"whid":0,"ProductDestinationAddress_x":1000,"ProductDestinationAddress_y":800,"items":"Ian","UPSAccountid":1}
+{
+  packageid: 1,
+  AProduct: [ { id: 1, description: 'book', count: 10 } ],
+  whid: 0,
+  ProductDestinationAddress_x: 1000,
+  ProductDestinationAddress_y: 800,
+  items: 'Ian',
+  UPSAccountid: 1
+}
+debug in pack: {"askTruck":[{"whid":0,"package":[{"packageid":1,"AProduct":[{"id":1,"description":"book","count":10}],"whid":0,"ProductDestinationAddress_x":1000,"ProductDestinationAddress_y":800,"items":"Ian","UPSAccountid":1}],"seqnum":1000}],"deliver":[],"acks":[]}
+debug: {"askTruck":[{"whid":0,"package":[{"packageid":1,"AProduct":[{"id":1,"description":"book","count":10}],"whid":0,"ProductDestinationAddress_x":1000,"ProductDestinationAddress_y":800,"items":"Ian","UPSAccountid":1}],"seqnum":1000}],"deliver":[],"acks":[]}
+sendPacket: {"askTruck":[{"whid":0,"package":[{"packageid":1,"AProduct":[{"id":1,"description":"book","count":10}],"whid":0,"ProductDestinationAddress_x":1000,"ProductDestinationAddress_y":800,"items":"Ian","UPSAccountid":1}],"seqnum":1000}],"deliver":[],"acks":[]}
+toPack: warehouse {whid}, packageid: 1
+topack {"id":1,"description":"book","count":10}
+socket: vcm-25468.vm.duke.edu:23456 already connected!
+socket: encoded message send to vcm-25468.vm.duke.edu: 23456 sending {"buy":[],"topack":[{"whnum":0,"things":[{"id":1,"description":"book","count":10}],"shipid":1,"seqnum":1001}],"load":[],"queries":[],"simspeed":100,"disconnect":false,"acks":[]}
+socket: new connection to vcm-25468.vm.duke.edu: 8000
+socket: encoded message send to vcm-25468.vm.duke.edu: 8000 sending {"askTruck":[{"whid":0,"package":[{"packageid":1,"AProduct":[{"id":1,"description":"book","count":10}],"whid":0,"ProductDestinationAddress_x":1000,"ProductDestinationAddress_y":800,"items":"Ian","UPSAccountid":1}],"seqnum":1000}],"deliver":[],"acks":[]}
+[33mdecoder: AResponses Error: invalid wire type 7 at offset 7[0m
+decoder: match AConnected
+++++++ 14
+[33msocket: event listener count for 'data' is 1[0m
+socket: receive decoded payload {"worldid":"14","result":"connected!"} from vcm-25468.vm.duke.edu:23456
+decoder: match AResponses
+[33msocket: event listener count for 'data' is 1[0m
+socket: receive decoded payload {"error":[{"err":"error: warehouse id/product_id/package id/truck id in certain world and warehouse(if product_id) does not exist","originseqnum":"1001","seqnum":"28"}],"acks":["1001"]} from vcm-25468.vm.duke.edu:23456
+[36m==================> World SAYS: item arrived <=================================[0m
+[]
+[36m==================> World SAYS: package ready <=================================[0m
+[]
+[36m==================> World SAYS: package loaded <=================================[0m
+[]
+[36m==================> World SAYS: ERROR <=================================[0m
+[
+  AErr {
+    err: 'error: warehouse id/product_id/package id/truck id in certain world and warehouse(if product_id) does not exist',
+    originseqnum: Long { low: 1001, high: 0, unsigned: false },
+    seqnum: Long { low: 28, high: 0, unsigned: false }
+  }
+]
+[36m==================> World SAYS: acks <=================================[0m
+[ Long { low: 1001, high: 0, unsigned: false } ]
+debug in pack: {"askTruck":[],"deliver":[],"acks":[{"low":1001,"high":0,"unsigned":false}]}

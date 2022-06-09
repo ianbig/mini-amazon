@@ -1,0 +1,22 @@
+<h1>
+    My Order History
+</h1>
+
+<ul class="product-list">
+    {{#each packages}}
+        <li> 
+            <p style="font-size:30px">Tracking Number: {{this.package_info.package_id}}</p>
+            <p style="font-size:30px">Package Status: {{this.package_info.package_status}}</p>
+            <p style="font-size:30px">Total Price: {{this.package_info.package_price}}</p>
+            <p style="font-size:30px">UPS Name: {{this.package_info.ups_name}}</p>
+                {{#each this.orders}}
+                    <li>
+                        <p style="font-family:georgia,garamond,serif; font-size:20px">{{this.item_name}}</p>
+                        <p style="font-family:georgia,garamond,serif; font-size:20px">Count: {{this.count}}</p>
+                        <p style="font-family:georgia,garamond,serif; font-size:20px">Price: {{this.order_price}}</p>
+                    </li>
+                {{/each}}
+            <br><br>
+        </li>
+    {{/each}}
+</ul>

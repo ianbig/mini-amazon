@@ -1,0 +1,57 @@
+<h1>
+    Browse Items
+</h1>
+
+<form action="" method="post">
+    <input type="text" name="user_input" placeholder="Search for names..">
+    <input type="submit" name="product_search" value="search"/>
+</form>
+
+<ul class="product-list">
+    {{#each products}}
+        <li> 
+            <p style="font-size:30px">{{this.item_name}}   ${{this.price}}</p>
+            <label for="tentacles">Number of tentacles (1-100):</label>
+            <form action="" method="post">
+                <input type="number" id="count" name="product_count" min="1" required/>
+                <input type="submit" name="add_cart" value="Add to Cart"/>
+                <input type="hidden" name="product_name" value="{{this.item_name}}"/>
+            </form>
+            <br><br>
+        </li>
+    {{/each}}
+</ul>
+
+
+
+
+
+
+
+<script>
+    Handlebars.registerHelper("getCount", function(name, count) {
+        fetch(http://vcm-25599.vm.duke.edu:3000/browseitems)
+            .then(post => {name: name, count: count});
+    }
+
+    function myFunction() {
+        // Declare variables
+        all_products = {{products}};
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById('product-search-bar');
+        filter = input.value.toUpperCase();
+
+        document.write(filter);    
+        
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("p")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+            } else {
+            li[i].style.display = "none";
+            }
+        }
+    }
+</script>

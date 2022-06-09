@@ -1,0 +1,52 @@
+<h1>
+    Welcome to Mini Amazon
+</h1>
+
+{{#if error}}
+<h1>{{error}}</h1>
+{{/if}}
+
+<div class="home-content">
+    <div class="article-content col-sm-4 pull-center">
+        <p> Sign In </p>
+        <form action="" method="post">
+            <div>
+                <label>Username:</label>
+                <input type="text" name="username_signin" required/>
+            </div>
+
+            <div>
+                <label>Password:</label>
+                <input type="password" name="password_signin" required/>
+            </div>
+            <div>
+                <input class="btn btn-primary" type="submit" name="log_in" value="Log In"/>
+            </div>
+        </form>                  
+    </div>          
+</div>
+
+
+<div class="home-content">
+    <div class="article-content col-sm-4 pull-center">
+        <p> Sign Up </p>
+        <form action="" method="post">
+            <div>
+                <label>Username:</label>
+                <input type="text" name="username_signup" required/>
+            </div>
+   
+            <div>
+                <label>Password:</label>
+                <input type="password" name="password_signup" required/>
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="text" name="email_signup" required/>
+            </div>
+            <div>
+                <input class="btn btn-primary" type="submit" name="sign_up" value="Sign Up"/>
+            </div>
+        </form>                  
+    </div>          
+</div>

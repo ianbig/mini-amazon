@@ -1,0 +1,102 @@
+{
+  "uuid": "55017b6b-b0af-442c-a975-6647810b8239",
+  "lastMigration": 19,
+  "name": "UPS mock",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "091bda77-d923-42ce-8de4-6e605db8f9ea",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "connectWorld",
+      "responses": [
+        {
+          "uuid": "8450b730-7a8a-4003-a5cd-0ac0dfd78a40",
+          "body": "{\n  \"worldid\" : 41,\n  \"result\" : \"connected!\",\n  \"seqnum\" : 1001\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "f80ea239-f8fb-4aa3-9659-d81874ca8706",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "orderTruck",
+      "responses": [
+        {
+          "uuid": "6aacaa06-0046-48f2-b341-021841096151",
+          "body": "{\n  \"truckarrived\" : {\n    \"truckid\" : 500,\n    \"seqnum\": 1001,\n    \"packageid\": []\n  },\n  \n  \"delivered\": {\n  }\n  \n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

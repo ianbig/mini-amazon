@@ -1,0 +1,203 @@
+{
+  "uuid": "2f0753ee-a82b-46ee-9081-67dc14a0853a",
+  "lastMigration": 19,
+  "name": "World",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3002,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "ce316c28-2ad8-4292-a67e-3e19b575f206",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "buy",
+      "responses": [
+        {
+          "uuid": "b4f54cd7-2633-40f0-8bcf-e16e4432102d",
+          "body": "{\n  \"arrived\": \n  [\n    {\n      \"whnum\": 3,\n      \"things\": [\n        {\n          \"id\" : 0,\n          \"description\": \"Ball\",\n          \"count\": 500\n        }\n      ],\n      \"seqnum\": 1002\n    },\n  ],\n  \"ready\": [],\n  \"loaded\": [],\n  \"finished\": {},\n  \"error\": {},\n  \"acks\": [1002],\n  \"packagestatus\": []\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "3b97794f-d5c6-494d-9529-f08369c4ee69",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "connect",
+      "responses": [
+        {
+          "uuid": "91f1c3c8-61d4-4f23-a695-c75864741ab2",
+          "body": "{\n  \"worldid\": 41,\n  \"result\": \"succeed!\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "worldid",
+              "value": "12",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "a1a48a4b-4ed9-41f8-901b-1c9aef1a061c",
+          "body": "{\n  \"worldid\": -1,\n  \"result\": \"error: drop request\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "b72f8575-4416-47df-b103-3555d8df3805",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "pack",
+      "responses": [
+        {
+          "uuid": "4355855c-ca86-4920-b56a-c9798b194db9",
+          "body": "{\n  \"arrived\": [],\n  \"ready\": [],\n  \"loaded\": [],\n  \"finished\": {},\n  \"error\": {},\n  \"acks\": [],\n  \"packagestatus\": []\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "f5fa75a9-f499-4973-9233-23aa87f70638",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "load",
+      "responses": [
+        {
+          "uuid": "9b36b3f6-daa4-4e3f-bf55-9635b1c56ecf",
+          "body": "{\n  \"arrived\": [],\n  \"ready\": [],\n  \"loaded\": [],\n  \"finished\": {},\n  \"error\": {},\n  \"acks\": [],\n  \"packagestatus\": []\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "981e2592-c0eb-461f-aca8-c6d2740a486a",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "8bb2de9d-23a5-4466-8443-3d11a279d3dd",
+          "body": "{\n  \"arrived\": [],\n  \"ready\": [],\n  \"loaded\": [],\n  \"finished\": {},\n  \"error\": {},\n  \"acks\": [],\n  \"packagestatus\": []\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

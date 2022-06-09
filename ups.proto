@@ -1,0 +1,52 @@
+syntax = "proto2";
+
+message AUConnect{
+}
+
+message UAConnected{ 
+    required int64 worldid = 1; 
+    required string result = 2; 
+}
+
+message Package { 
+    required int64 packageid = 1; 
+    required int32 ProductDestinationAddress_x = 2; 
+    required int32 ProductDestinationAddress_y = 3; 
+    required string items = 4; 
+    optional int64 UPSAccountid = 5; 
+}
+
+message AUOrderTruck {  
+ required int32 whid = 1;
+    repeated Package package = 2;  
+    required int64 seqnum = 3; 
+} 
+
+message UATruckArrived {
+    required int32 truckid =1; 
+    required int64 seqnum = 2; 
+    repeated int64 packageid = 3;
+} 
+
+message AUDeliver { 
+    required int64 truckid = 1; 
+    repeated int64 packageid = 2; 
+    required int64 seqnum = 3; 
+} 
+
+message UADelivered { 
+    repeated int64 packageid = 1; 
+    required int64 seqnum = 2; 
+} 
+
+message AUCommands { 
+    repeated AUOrderTruck askTruck = 1; 
+    repeated AUDeliver deliver = 2; 
+    repeated int64 acks = 3;  
+} 
+
+message UACommands { 
+    repeated UATruckArrived truckarrived= 1; 
+    repeated UADelivered delivered = 2; 
+    repeated int64 acks = 3;
+}
