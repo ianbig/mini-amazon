@@ -9,8 +9,8 @@ This project aims to build an online shopping plateform that provide one stop sh
 ![](./Mini-Amazon.jpg)
 ## Simulation
 To test the accuracy of the app, we use an probided world server from [here](https://github.com/yunjingliu96/world_simulator_exec)
-## Installation
-### Package for Development
-2. for coding error checking: [eslint]()
-4. for template: [express-handlebars]()
-5. for server: [express]()
+## How to Build the Project
+1. `npm install` to install node modules
+2. `git clone https://github.com/yunjingliu96/world_simulator_exec.git` to get the world server
+3. `sudo docker-compose build` and `sudo docker-compose up` to start the world server
+4. `DEBUG=myapp:* npm start` to start the app and go to `localhost:3000` in your browser
