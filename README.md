@@ -8,7 +8,7 @@ This project aims to build an online shopping plateform that provide one stop sh
 ## Project Architecture
 ![](./Mini-Amazon.jpg)
 ## Simulation
-To test the accuracy of the app, we use an probided world server from [here](https://github.com/yunjingliu96/world_simulator_exec)
+To test the accuracy of the app, we use an probided world server from [here](git@github.com:ianbig/sim-world.git)
 ## How to Build the Project
 1. `npm install` to install node modules
 2. `git clone https://github.com/yunjingliu96/world_simulator_exec.git` to get the world server
